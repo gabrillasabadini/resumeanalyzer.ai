@@ -1,0 +1,14 @@
+from pypdf import PdfReader
+
+def extractpdf(pdf_doc):
+    pdf = PdfReader(pdf_doc) # index, page detals
+    
+    raw_text = ''
+    
+    for index,page in enumerate(pdf.pages):
+        raw_text +=page.extract_text()
+        
+    return raw_text
+        
+    
+    
